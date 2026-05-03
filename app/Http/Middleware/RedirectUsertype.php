@@ -24,6 +24,9 @@ class RedirectUsertype
         $usertype = $user->usertype;
 
         if (! isset($dashboards[$usertype])) {
+            if ($request->routeIs('dashboard')) {
+                return $next($request);
+            }
             return redirect()->route('dashboard');
         }
 
