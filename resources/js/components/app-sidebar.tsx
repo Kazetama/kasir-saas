@@ -67,6 +67,10 @@ export function AppSidebar() {
                     title: 'Kategori',
                     href: '/categories',
                 },
+                {
+                    title: 'Satuan',
+                    href: '/units',
+                },
             ],
         });
     }
