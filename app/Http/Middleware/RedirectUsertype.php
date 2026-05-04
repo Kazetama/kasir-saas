@@ -17,8 +17,8 @@ class RedirectUsertype
         }
 
         $dashboards = [
-            'admin'      => 'admin.dashboard',
-            'user'       => 'dashboard',
+            'admin' => 'admin.dashboard',
+            'user' => 'dashboard',
         ];
 
         $usertype = $user->usertype;
@@ -27,6 +27,7 @@ class RedirectUsertype
             if ($request->routeIs('dashboard')) {
                 return $next($request);
             }
+
             return redirect()->route('dashboard');
         }
 
@@ -42,6 +43,7 @@ class RedirectUsertype
                 if ($request->routeIs($targetRoute)) {
                     break;
                 }
+
                 return redirect()->route($targetRoute);
             }
         }

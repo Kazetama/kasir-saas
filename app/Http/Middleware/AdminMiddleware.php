@@ -4,8 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Response;
 
 class AdminMiddleware
 {
@@ -22,8 +22,8 @@ class AdminMiddleware
         $user = Auth::user();
 
         // 1. Tentukan URL tujuan berdasarkan usertype
-        $redirectUrl = match($user?->usertype) {
-            'user'  => url('/dashboard'),
+        $redirectUrl = match ($user?->usertype) {
+            'user' => url('/dashboard'),
             default => url('/login'),
         };
 

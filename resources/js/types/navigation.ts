@@ -8,7 +8,8 @@ export type BreadcrumbItem = {
 
 export type NavItem = {
     title: string;
-    href: NonNullable<InertiaLinkProps['href']>;
+    href?: NonNullable<InertiaLinkProps['href']> | string | any;
     icon?: LucideIcon | null;
     isActive?: boolean;
+    items?: Omit<NavItem, 'icon' | 'items'>[];
 };
